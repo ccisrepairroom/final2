@@ -46,9 +46,15 @@ class CategoryResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')->searchable()->sortable(),
-                Tables\Columns\TextColumn::make('created_at')->sortable()->date('d/m/Y H:i'),
-                Tables\Columns\TextColumn::make('updated_at')->sortable()->date('d/m/Y H:i'),
+                Tables\Columns\TextColumn::make('name')
+                ->searchable()
+                ->sortable(),
+                Tables\Columns\TextColumn::make('created_at')
+                ->sortable()
+                ->date('d/m/Y H:i'),
+                Tables\Columns\TextColumn::make('updated_at')
+                ->sortable()
+                ->date('d/m/Y H:i'),
             ])
             ->filters([
                 //
@@ -73,8 +79,8 @@ class CategoryResource extends Resource
     {
         return [
             'index' => Pages\ListCategories::route('/'),
-            'create' => Pages\CreateCategory::route('/create'),
-            'edit' => Pages\EditCategory::route('/{record}/edit'),
+            //'create' => Pages\CreateCategory::route('/create'),
+            //'edit' => Pages\EditCategory::route('/{record}/edit'),
         ];
     }
 }
